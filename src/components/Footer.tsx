@@ -45,7 +45,11 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start space-x-2">
                 <Phone className="h-4 w-4 mt-0.5" />
-                <span>+91-XXXXXXXXXX</span>
+                <a href="tel:+918278793606" className="hover:text-secondary transition-smooth">+91 8278793606</a>
+              </li>
+              <li className="flex items-start space-x-2">
+                <MessageCircle className="h-4 w-4 mt-0.5" />
+                <a href="https://wa.me/918278793606" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-smooth">WhatsApp Us</a>
               </li>
               <li className="flex items-start space-x-2">
                 <Mail className="h-4 w-4 mt-0.5" />
@@ -63,7 +67,7 @@ const Footer = () => {
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-smooth">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-smooth">
+              <a href="https://wa.me/918278793606" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-smooth">
                 <MessageCircle className="h-5 w-5" />
               </a>
             </div>
@@ -83,7 +87,7 @@ const Footer = () => {
 
       {/* WhatsApp Floating Button */}
       <a
-        href="https://wa.me/91XXXXXXXXXX?text=Hi! I want to order from Himalayan Boon"
+        href="https://wa.me/918278793606?text=Hi! I want to order from Himalayan Boon"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-large hover:scale-110 transition-bounce z-40"

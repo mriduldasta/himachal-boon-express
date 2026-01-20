@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { ShoppingCart, ArrowLeft, Check } from "lucide-react";
+import { ShoppingCart, ArrowLeft, Check, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -81,16 +81,33 @@ const ProductDetail = () => {
               <Badge variant="destructive" className="mb-6">Out of Stock</Badge>
             )}
 
-            <Button
-              variant="secondary"
-              size="lg"
-              className="w-full mb-8"
-              onClick={() => addToCart(product)}
-              disabled={product.stock === 0}
-            >
-              <ShoppingCart className="mr-2 h-5 w-5" />
-              Add to Cart
-            </Button>
+            <div className="flex gap-3 mb-8">
+              <Button
+                variant="secondary"
+                size="lg"
+                className="flex-1"
+                onClick={() => addToCart(product)}
+                disabled={product.stock === 0}
+              >
+                <ShoppingCart className="mr-2 h-5 w-5" />
+                Add to Cart
+              </Button>
+              <a
+                href={`https://wa.me/918278793606?text=${encodeURIComponent(`Hi! I want to order:\n\n📦 ${product.name}\n💰 Price: ₹${product.price}\n📏 Weight: ${product.weight}\n\nPlease confirm availability and delivery details.`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1"
+              >
+                <Button
+                  size="lg"
+                  className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white"
+                  disabled={product.stock === 0}
+                >
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  Buy on WhatsApp
+                </Button>
+              </a>
+            </div>
 
             <Card>
               <CardContent className="p-6 space-y-6">
