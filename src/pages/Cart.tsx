@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Minus, Plus, Trash2, ArrowLeft, ShoppingBag } from "lucide-react";
+import { Minus, Plus, Trash2, ArrowLeft, ShoppingBag, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -150,6 +150,20 @@ const Cart = () => {
                 <Button variant="secondary" size="lg" className="w-full mb-3">
                   Proceed to Checkout
                 </Button>
+
+                <a
+                  href={`https://wa.me/918278793606?text=${encodeURIComponent(`Hi! I want to order from Himalayan Boon:\n\n${cart.map(item => `📦 ${item.name} x${item.quantity} - ₹${item.price * item.quantity}`).join('\n')}\n\n💰 Subtotal: ₹${subtotal}\n🚚 Delivery: ${deliveryCharge === 0 ? 'FREE' : `₹${deliveryCharge}`}\n📍 Total: ₹${total}\n\nPlease confirm my order!`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    size="lg"
+                    className="w-full mb-3 bg-[#25D366] hover:bg-[#128C7E] text-white"
+                  >
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    Order via WhatsApp
+                  </Button>
+                </a>
 
                 <p className="text-xs text-center text-muted-foreground">
                   Cash on Delivery Available
